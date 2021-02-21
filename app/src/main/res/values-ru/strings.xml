@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Нетология</string>
+    <string name="date" translatable="false">03 февраля в 18:36</string>
+    <string name="title">Нетология. Университет интернет-профессий</string>
+    <string name="text">Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по он-лайн маркетингу. Затем появились курсы по дизайну, разработке, аналитке и управлению. Мы растем сами и помогаем расти студентам: от новичков до уверенных профессионалов. Но самое важное остается с нами: мы верим, что в каждом уже есть сила, которая заставляет хотеть больше, целиться выше, бежать быстрее. Наша миссия - помочь встать на путь роста и начать цепочку перемен - </string>
+    <string name="likes">10</string>
+    <string name="link">https://netolo.gy/fyb</string>
+    <string name="share">12</string>
+    <string name="count_view">100</string>
+</resources>
