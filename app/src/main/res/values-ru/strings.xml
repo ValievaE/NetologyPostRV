@@ -8,4 +8,8 @@
     <string name="link">https://netolo.gy/fyb</string>
     <string name="share">12</string>
     <string name="count_view">100</string>
+    <string name="menu_remove">Удалить</string>
+    <string name="post_text">Новый текст</string>
+    <string name="menu_edit" translatable="false">Редактировать</string>
+    <string name="error_empty_content">Введите текст</string>
 </resources>

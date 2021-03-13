@@ -7,4 +7,6 @@ import ru.netology.netologypostrv.Post
         fun getAll(): LiveData<List<Post>>
         fun like(id: Long)
         fun share(id: Long)
+        fun save(post: Post)
+        fun remove(id: Long)
     }

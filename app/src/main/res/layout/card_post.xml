@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="end"
-        app:constraint_referenced_ids="imageButtonMenu,text,countViews"
+        app:constraint_referenced_ids="imageButtonMenu,text"
          />
 
     <ImageView
@@ -53,14 +53,15 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/imageButtonMenu"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
-        android:background="@color/white"
-        android:src="@drawable/ic_baseline_more_vert_24"
+        style="@style/Widget.AppTheme.Buttons"
+
+        app:icon="@drawable/ic_baseline_more_vert_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -100,101 +101,38 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewDate"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/likes"
-        android:layout_width="67dp"
-        android:layout_height="24dp"
+        style="@style/Widget.AppTheme.LikeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-
-        android:src="@drawable/ic_baseline_favorite_border_24"
+        android:checkable="true"
+        android:text="@string/likes"
+        android:textAlignment="textStart"
+        app:icon="@drawable/ic_like_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewLikes"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLink"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textViewLikes"
-        android:layout_width="67dp"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ivShare"
+        style="@style/Widget.AppTheme.Buttons"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
         android:layout_marginTop="24dp"
-        android:layout_marginRight="10dp"
-
-        android:text="@string/likes"
+        android:layout_marginLeft="12dp"
+        android:text="@string/share"
+        android:textAlignment="textStart"
+        app:icon="@drawable/ic_baseline_share_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ivShare"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.276"
         app:layout_constraintStart_toEndOf="@+id/likes"
         app:layout_constraintTop_toBottomOf="@+id/textViewLink"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <ImageView
-        android:id="@+id/ivShare"
-        android:layout_width="68dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="24dp"
-
-        android:src="@drawable/ic_baseline_share_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewShare"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textViewLikes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLink"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <TextView
-        android:id="@+id/textViewShare"
-        android:layout_width="67dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginRight="16dp"
-
-        android:text="@string/share"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/eye"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/ivShare"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLink"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/eye"
-        android:layout_width="67dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="24dp"
-
-        android:src="@drawable/ic_baseline_remove_red_eye_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/countViews"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textViewShare"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLink"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/countViews"
-        android:layout_width="68dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="24dp"
-
-        android:text="@string/count_view"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/eye"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLink"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.238" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
