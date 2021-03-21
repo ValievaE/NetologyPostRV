@@ -43,4 +43,5 @@ class PostViewModel: ViewModel() {
     }
 
     fun remove(id: Long) = repository.remove(id)
+    fun onClickPost (post: Post, position: Int) = repository.onClickPost(post, position)
 }

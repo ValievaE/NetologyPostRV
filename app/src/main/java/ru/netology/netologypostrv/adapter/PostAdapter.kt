@@ -1,14 +1,18 @@
 package ru.netology.netologypostrv.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.netologypostrv.Converter
 import ru.netology.netologypostrv.Post
 import ru.netology.netologypostrv.R
+import ru.netology.netologypostrv.activity.MainActivity
+import ru.netology.netologypostrv.activity.NewPostActivity
 import ru.netology.netologypostrv.databinding.CardPostBinding
 
 interface OnInteractionListener {
@@ -16,6 +20,7 @@ interface OnInteractionListener {
     fun onEdit(post: Post) {}
     fun onRemove(post: Post) {}
     fun onShare(post: Post) {}
+    fun onClickPost (post: Post, position: Int )
 }
 
 class PostAdapter(
@@ -73,6 +78,7 @@ class PostViewHolder(
             ivShare.setOnClickListener {
                 onInteractionListener.onShare(post)
             }
+            text.setOnClickListener{onInteractionListener.onClickPost(post, position = 0)}
         }
     }
 }

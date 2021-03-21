@@ -9,4 +9,5 @@ import ru.netology.netologypostrv.Post
         fun share(id: Long)
         fun save(post: Post)
         fun remove(id: Long)
+        fun onClickPost (post: Post, position: Int)
     }

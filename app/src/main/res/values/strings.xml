@@ -11,4 +11,5 @@
     <string name="menu_remove" translatable="false">Remove post</string>
     <string name="post_text" translatable="false">New text</string>
     <string name="error_empty_content">Введите текст</string>
+    <string name="chooser_share_post" translatable="false">Share post</string>
 </resources>
