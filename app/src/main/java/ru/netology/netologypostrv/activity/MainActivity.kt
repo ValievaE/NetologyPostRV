@@ -38,8 +38,10 @@ class MainActivity : AppCompatActivity() {
             override fun onRemove(post: Post) {
                 viewModel.remove(post.id)
             }
-            override fun onClickPost (post: Post, position: Int){
+
+            override fun onClickPost(post: Post, position: Int) {
                 viewModel.onClickPost(post, position)
+                viewModel.edit(post)
 
                 val intent = Intent(this@MainActivity, EditPostActivity::class.java)
                 intent.putExtra("postToEdit", post.content)
@@ -71,43 +73,13 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, newPostRequestCode)
         }
 
-//        viewModel.edited.observe(this, { post ->
-//            if (post.id == 0L) {
-//                return@observe
-//            }
-//            with(binding.content) {
-//                requestFocus()
-//                setText(post.content)
-//            }
-//        })
-//
-//        binding.save.setOnClickListener {
-//            with(binding.content) {
-//                if (text.isNullOrBlank()) {
-//                    Toast.makeText(
-//                            this@MainActivity,
-//                            context.getString(R.string.error_empty_content),
-//                            Toast.LENGTH_SHORT
-//                    ).show()
-//                    return@setOnClickListener
-//                }
-//
-//                viewModel.changeContent(text.toString())
-//                viewModel.save()
-//
-//                setText("")
-//                clearFocus()
-//                AndroidUtils.hideKeyboard(this)
-//            }
-//        }
     }
-
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when (requestCode) {
-            newPostRequestCode, editPostRequestCode -> {
+            newPostRequestCode -> {
                 if (resultCode != Activity.RESULT_OK) {
                     return
                 }
@@ -117,7 +89,18 @@ class MainActivity : AppCompatActivity() {
                     viewModel.save()
                 }
             }
+            editPostRequestCode -> {
+                if (resultCode != Activity.RESULT_OK) {
+                    return
+                }
 
+                data?.getStringExtra(Intent.EXTRA_TEXT)?.let {
+                    viewModel.changeContent(it)
+                    viewModel.save()
+                }
+
+
+            }
         }
     }
 

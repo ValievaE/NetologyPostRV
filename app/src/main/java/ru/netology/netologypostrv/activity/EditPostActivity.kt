@@ -27,6 +27,7 @@ class EditPostActivity : AppCompatActivity() {
                 val content = binding.editTextpost.text.toString()
                 intent.putExtra(Intent.EXTRA_TEXT, content)
                 setResult(Activity.RESULT_OK, intent)
+
             }
             finish()
         }

@@ -105,8 +105,10 @@ class PostRepositoryInMemory : PostRepository {
 
     override fun like(id: Long) {
         posts = posts.map {
-            if (it.id != id) it else it.copy(liked = !it.liked,
-                likesCount = if (!it.liked) it.likesCount.inc() else it.likesCount.dec())
+            if (it.id != id) it else it.copy(
+                liked = !it.liked,
+                likesCount = if (!it.liked) it.likesCount.inc() else it.likesCount.dec()
+            )
         }
         data.value = posts
     }
@@ -117,6 +119,7 @@ class PostRepositoryInMemory : PostRepository {
         }
         data.value = posts
     }
+
     override fun save(post: Post) {
         if (post.id == 0L) {
             posts = listOf(
@@ -132,7 +135,9 @@ class PostRepositoryInMemory : PostRepository {
             ) + posts
             data.value = posts
             return
+
         }
+
 
         posts = posts.map {
             if (it.id != post.id) it else it.copy(content = post.content)
@@ -140,12 +145,13 @@ class PostRepositoryInMemory : PostRepository {
         data.value = posts
     }
 
+
     override fun remove(id: Long) {
         posts = posts.filter { it.id != id }
         data.value = posts
     }
 
-    override fun onClickPost (post: Post, position: Int){
+    override fun onClickPost(post: Post, position: Int) {
         if (posts.indexOf(post) == position) {
             posts.get(position)
         }
